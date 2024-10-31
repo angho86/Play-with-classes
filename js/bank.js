@@ -34,6 +34,7 @@ class bankAccount{
             const time = `${date.getFullYear()}/${date.getMonth()}/${date.getDate()} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
             const historyObj = {
                 deposited: this.#deposit,
+                balance: this.#balance,
                 time: time,
             };
 
