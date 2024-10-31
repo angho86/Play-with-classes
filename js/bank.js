@@ -33,7 +33,7 @@ class bankAccount{
             const date = new Date();
             const time = `${date.getFullYear()}/${date.getMonth()}/${date.getDate()} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
             const historyObj = {
-                deposited: this.#deposit,
+                action: 'deposited',
                 balance: this.#balance,
                 time: time,
             };
@@ -50,7 +50,7 @@ class bankAccount{
             const date = new Date();
             const time = `${date.getFullYear()}/${date.getMonth()}/${date.getDate()} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
             const historyObj = {
-                withdrawed: newWithdraw,
+                action: 'withdrawed',
                 balance: this.#balance,
                 time: time,
             };
