@@ -43,6 +43,23 @@ class bankAccount{
             return 'Please enter a number';
         }
     }
+
+    set withdraw(newWithdraw) {
+        if(typeof newWithdraw ==='number' && !isNaN(newWithdraw)){
+            this.#balance -= newWithdraw;
+            const date = new Date();
+            const time = `${date.getFullYear()}/${date.getMonth()}/${date.getDate()} - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+            const historyObj = {
+                withdrawed: newWithdraw,
+                balance: this.#balance,
+                time: time,
+            };
+
+            this.#history.push(historyObj);
+        } else {
+            return 'Please enter a number';
+        }
+    }
 }
 
 const bal = new bankAccount(10);
@@ -50,6 +67,11 @@ const bal = new bankAccount(10);
 console.log(bal.balance);
 
 bal.deposit = 20;
+
+console.log(bal.history);
+console.log(bal.balance);
+
+bal.withdraw = 15;
 
 console.log(bal.history);
 console.log(bal.balance);
